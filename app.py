@@ -5,8 +5,7 @@ import asyncio
 
 client = discord.Client()
 token = open("token.txt", "r").read()
-# token = 'NTAzMzgyOTQyMDE0MjQyODQ3.Dq1s0g.2yBg4hJKkAapK9fAagV7vSJydwk'
-# https://discordapp.com/oauth2/authorize?client_id=503382942014242847&scope=bot&permissions=92160
+
 def community_report(guild):
     online = 0
     idle = 0
@@ -40,7 +39,7 @@ async def user_metrics_background_task():
 @client.event # event decorator
 async def on_ready():
     global my_server
-    my_server = client.get_guild(255233110071836672)
+    my_server = client.get_guild(GUILD_ID)
     print(f"We have logged in as {client.user}")
 
 @client.event
